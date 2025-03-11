@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civilization Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Civilization Simulator</h1>
+
+    <div class="container">
+        <!-- Forest Box -->
+        <div class="box">
+            <h3>Forest</h3>
+            <p id="tree-count">🌲 Trees: 10</p>
+            <button onclick="cutTree()">Cut Down Tree</button>
+        </div>
+
+        <!-- Exploration Box -->
+        <div class="box">
+            <h3>Exploration</h3>
+            <p id="explore-result">🔍 Explore to discover resources</p>
+            <button onclick="explore()">Explore</button>
+        </div>
+
+        <!-- Crafting Box -->
+        <div class="box crafting-box">
+            <h3>Crafting</h3>
+            <p>Drag items into the slots below or return them to inventory</p>
+
+            <div id="crafting-grid" class="crafting-grid">
+                <div class="slot" ondragover="allowDrop(event)" ondrop="dropItem(event, 0)" ondblclick="returnItem(event, 0)"></div>
+                <div class="slot" ondragover="allowDrop(event)" ondrop="dropItem(event, 1)" ondblclick="returnItem(event, 1)"></div>
+            </div>
+
+            <button onclick="craftItem()">Craft Item</button>
+            <button onclick="returnAllItems()">Return All</button>
+            <p id="craft-result"></p>
+        </div>
+
+        <!-- Inventory Box -->
+        <div class="box inventory-box">
+            <h3>Inventory</h3>
+            <div id="inventory"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
